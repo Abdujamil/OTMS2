@@ -1,0 +1,136 @@
+﻿<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #AECCF8;
+        text-align: left;
+        padding: 8px;
+    }
+
+    .ptab {
+        text-align: center;
+
+    }
+    .head {
+        background-color: #AECCF8;
+    }
+    .text-center{
+        text-align: center;
+    }
+</style>
+
+
+
+
+<form>
+    <table class="text-center">
+        <tr class="head">
+            <th>Расчет</th>
+            <th>Обозначение</th>
+        </tr>
+        <tr>
+            <td>Площадь поперечного сечения аппарата</td>
+            <td class="labelOutput">@ViewBag.Data.S,м2 </td>
+        </tr>
+        <tr>
+            <td> Расход газа</td>
+           <td class="labelOutput"> @ViewBag.Data.Vr м3/с </td>
+        </tr>
+        <tr>
+            <td>Отношение теплоемкостей потоков</td>
+             <td class="labelOutput"> @ViewBag.Data.m  м3/с </td>
+        </tr>
+        <tr>
+            <td> Полная относительная высота </td>
+            <td class="labelOutput">  @ViewBag.Data.Yo  м </td>
+        </tr>
+        <tr>
+            <td> Решение уравнения</td>
+            <td class="labelOutput"> @ViewBag.Data.Formul</td>
+        </tr>
+    </table>
+
+    <p class="ptab"> Таблица решения </p>
+    @*<table border="1" cellpadding="5" cellspacing="1">*@
+    <table>
+
+
+    </table>
+        <table align="center" id="table" class="table table-bordered">
+
+            @for (int b = 0; b < ViewBag.Data.Restable.Length; b++)
+            {
+                <tr>
+                    @for (int z = 0; z < ViewBag.Data.L1.Count; z++)
+                    {
+
+                        <td>
+                            @ViewBag.Data.Restable[b][z];
+                        </td>
+                    }
+                </tr>
+            }
+        </table>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+
+    // Load the Visualization API and the corechart package.
+    google.charts.load('current', { 'packages': ['corechart'] });
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+
+    // Callback that creates and populates a data table,
+    // instantiates the pie chart, passes in the data and
+    // draws it.
+    var array= [];
+    for (let i = 0; i < @ViewBag.Data.L1.Count; i++)
+    {
+        @{ int u = 0; }
+        array.push(@ViewBag.Data.L8[u])
+        @{u++;}
+    }
+
+
+    //console.log(array)
+    function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+
+        data.addColumn('number', 'Температура,оС');
+        data.addRows([
+            ['0', 235],
+            ['0,5', 125],
+            ['1', 67],
+            ['1,5', 36],
+            ['2', 19],
+            ['2,5', 10],
+            ['3', 5],
+            ['3,5', 3],
+            ['5', 0]
+
+                 ])
+
+        // Set chart options
+        var options = {
+            'title': 'Разность температур материала и газа',
+            'width': 800,
+            'height': 500
+        };
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+        </script>
+
+
+</form>
+        <!--Div that will hold the pie chart-->
+        <div id="chart_div"></div>

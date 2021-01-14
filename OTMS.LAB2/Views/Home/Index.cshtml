@@ -1,0 +1,107 @@
+﻿
+
+<style>
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size:cover;
+        }
+
+    td, th {
+        border: 1px solid #AECCF8;
+        text-align: left;
+        padding: 8px;
+    }
+
+    .display-4{
+        color: gray;
+    }
+    .active {
+        background-color: #AECCF8;
+    }
+</style>
+
+<div class="text-center">
+    <h5 class="display-4">Исходники</h5>
+</div>
+
+<form action="/Home/Calc" method="post">
+    <table>
+        <tr class="active">
+            <th>Название</th>
+            <th>Значение</th>
+            <th>Измирение</th>
+        </tr>
+        <tr>
+            <td>Высота слоя</td>
+            <td>
+                <input type="text" name="HO" value="5" />
+            </td>
+            <td>H</td>
+        </tr>
+        <tr>
+            <td>Начальная температура материала</td>
+            <td>
+                <input type="text" name="t1" value="700" />
+            </td>
+            <td> t'</td>
+        </tr>
+        <tr>
+            <td>Начальная температура газа</td>
+            <td>
+                <input type="text" name="T1" value="20" />
+            </td>
+            <td> T"</td>
+        </tr>
+        <tr>
+            <td> Скорость газа на свободное сечение шахты</td>
+            <td>
+                <input type="text" name="Wr" value="0,78" />
+            </td>
+            <td>wr</td>
+        </tr>
+        <tr>
+            <td>Средняя теплоемкость газа</td>
+            <td>
+                <input type="text" name="Cr" value="1,32" />
+            </td>
+            <td>Cr</td>
+        </tr>
+        <tr>
+            <td>Расход материалов</td>
+            <td>
+                <input type="text" name="GM" value="1,72" />
+            </td>
+            <td>Gm</td>
+        </tr>
+        <tr>
+            <td>Теплоемкость материалов</td>
+            <td>
+                <input type="text" name="Cm" value="1,49" />
+            </td>
+            <td>Cm</td>
+        </tr>
+        <tr>
+            <td>Объемный коэффициент теплоотдачи</td>
+            <td>
+                <input type="text" name="ALFAV" value="2460" />
+            </td>
+            <td> αV</td>
+        </tr>
+        <tr>
+            <td>Диаметр аппарата</td>
+            <td>
+                <input type="text" name="D" value="2,2" />
+            </td>
+            <td>D</td>
+        </tr>
+
+    </table>
+    <div style="align-content:flex-end;">
+        <input type="submit" name="name" value="Рассчитать" style="background-color: #AECCF8;  border-color: #AECCF8;"/>
+    </div>
+</form>
+    

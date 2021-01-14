@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTMS.LAB2", "OTMS.LAB2\OTMS.LAB2.csproj", "{F7F810F2-6122-473C-82FD-15FF65E54908}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7F810F2-6122-473C-82FD-15FF65E54908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7F810F2-6122-473C-82FD-15FF65E54908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7F810F2-6122-473C-82FD-15FF65E54908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7F810F2-6122-473C-82FD-15FF65E54908}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3FABAF19-04C4-4286-9909-D84E0C562911}
+	EndGlobalSection
+EndGlobal
